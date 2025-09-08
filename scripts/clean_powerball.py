@@ -39,7 +39,6 @@ def read_powerball_csv(path: Path) -> pd.DataFrame:
         df["PowerPlay"] = np.nan
     else:
         raise ValueError(f"Unexpected number of columns: {df.shape[1]} (expected 10 or 11).")
-    # Return in canonical order
     return df[["Game","Month","Day","Year","Num1","Num2","Num3","Num4","Num5","Powerball","PowerPlay"]]
 
 def to_date(df: pd.DataFrame) -> pd.Series:
@@ -115,8 +114,7 @@ def main():
     wide = build_wide(raw)
     long = build_long(wide)
 
-    # Build data dictionary BEFORE saving
-    dd = pd.DataFrame({
+    data_dict = pd.DataFrame({
         "column": ["Date", "Num1", "Num2", "Num3", "Num4", "Num5", "Powerball", "PowerPlay",
                    "Year", "YearMonth", "BallType", "BallNumber", "Position"],
         "description": [
@@ -132,10 +130,9 @@ def main():
         ]
     })
 
-    # Save files (pandas writes directly)
     wide.to_csv(outdir / "powerball_clean_wide.csv", index=False)
     long.to_csv(outdir / "powerball_clean_long.csv", index=False)
-    dd.to_csv(outdir / "data_dictionary.csv", index=False)
+    data_dict.to_csv(outdir / "data_dictionary.csv", index=False)
 
     print(f"Wrote {outdir / 'powerball_clean_wide.csv'}")
     print(f"Wrote {outdir / 'powerball_clean_long.csv'}")
