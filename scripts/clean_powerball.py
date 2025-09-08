@@ -66,22 +66,24 @@ def build_wide(df: pd.DataFrame) -> pd.DataFrame:
     out["Date"] = to_date(out)
     out = out[pd.notna(out["Date"])]
     out = clean_types(out)
+
     # Drop rows missing any number
     for c in ["Num1","Num2","Num3","Num4","Num5","Powerball"]:
         out = out[pd.notna(out[c])]
+
     # Helpers
     out["Year"] = out["Date"].dt.year
-    out["Month"] = out["Date"].dt.month
     out["YearMonth"] = out["Date"].dt.to_period("M").astype(str)
-    # Order, sort, dedupe
-    out = out[["Date","Game","Num1","Num2","Num3","Num4","Num5","Powerball","PowerPlay","Year","Month","YearMonth"]]
+
+    # Select only the lean columns (no Game, no Month)
+    out = out[["Date","Num1","Num2","Num3","Num4","Num5","Powerball","PowerPlay","Year","YearMonth"]]
     out = out.sort_values("Date").reset_index(drop=True)
     out = dedupe_by_draw(out)
     return out
 
 def build_long(wide: pd.DataFrame) -> pd.DataFrame:
     main = wide.melt(
-        id_vars=["Date","Game","Powerball","PowerPlay","Year","Month","YearMonth"],
+        id_vars=["Date","PowerPlay","Year","YearMonth"],
         value_vars=["Num1","Num2","Num3","Num4","Num5"],
         var_name="Position",
         value_name="BallNumber"
@@ -89,12 +91,12 @@ def build_long(wide: pd.DataFrame) -> pd.DataFrame:
     main["Position"] = main["Position"].str.extract(r"(\d+)").astype(int)
     main["BallType"] = "Main"
 
-    pb = wide[["Date","Game","Powerball","PowerPlay","Year","Month","YearMonth"]].copy()
+    pb = wide[["Date","PowerPlay","Year","YearMonth","Powerball"]].copy()
     pb = pb.rename(columns={"Powerball":"BallNumber"})
     pb["Position"] = "PB"
     pb["BallType"] = "Powerball"
 
-    cols = ["Date","Game","BallType","BallNumber","Position","PowerPlay","Year","Month","YearMonth"]
+    cols = ["Date","BallType","BallNumber","Position","PowerPlay","Year","YearMonth"]
     long_df = pd.concat([main[cols], pb[cols]], ignore_index=True)
     long_df["BallNumber"] = pd.to_numeric(long_df["BallNumber"], errors="coerce").astype("Int64")
     return long_df
@@ -115,20 +117,14 @@ def main():
 
     # Build data dictionary BEFORE saving
     dd = pd.DataFrame({
-        "column": ["Date","Game","Num1","Num2","Num3","Num4","Num5","Powerball","PowerPlay",
-                   "Year","Month","YearMonth","BallType","BallNumber","Position"],
+        "column": ["Date", "Num1", "Num2", "Num3", "Num4", "Num5", "Powerball", "PowerPlay",
+                   "Year", "YearMonth", "BallType", "BallNumber", "Position"],
         "description": [
             "Draw date (YYYY-MM-DD)",
-            "Game name (e.g., Powerball)",
-            "First main ball",
-            "Second main ball",
-            "Third main ball",
-            "Fourth main ball",
-            "Fifth main ball",
+            "First main ball", "Second main ball", "Third main ball", "Fourth main ball", "Fifth main ball",
             "Powerball number",
-            "Power Play multiplier when present (may be blank)",
+            "Power Play multiplier (may be blank)",
             "Calendar year",
-            "Calendar month number",
             "YYYY-MM period string",
             "Main or Powerball (long format only)",
             "Ball number value",
