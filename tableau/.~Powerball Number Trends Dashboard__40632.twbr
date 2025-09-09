@@ -1,0 +1,781 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20243.24.1010.1014                               -->
+<workbook original-version='18.1' source-build='2024.3.0 (20243.24.1010.1014)' source-platform='mac' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
+    <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelExtractV2 />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SetMembershipControl />
+    <SheetIdentifierTracking />
+    <SortTagCleanup />
+    <_.fcp.VConnDownstreamExtractsWithWarnings.true...VConnDownstreamExtractsWithWarnings />
+    <WindowsPersistSimpleIdentifiers />
+    <ZoneBackgroundTransparency />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='powerball_clean_long' inline='true' name='federated.0967z6a1hrk6n01g2vxht03qfu88' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='powerball_clean_long' name='textscan.1dlrtc90z22afa10ppx171duvzuj'>
+            <connection class='textscan' directory='/Users/cassidynguyen/Documents/GitHub/lottery-dashboard/data/processed/powerball_full' filename='powerball_clean_long.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation connection='textscan.1dlrtc90z22afa10ppx171duvzuj' name='powerball_clean_long.csv' table='[powerball_clean_long#csv]' type='table'>
+          <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+            <column datatype='date' name='Date' ordinal='0' />
+            <column datatype='string' name='BallType' ordinal='1' />
+            <column datatype='integer' name='BallNumber' ordinal='2' />
+            <column datatype='integer' name='Position' ordinal='3' />
+            <column datatype='integer' name='PowerPlay' ordinal='4' />
+            <column datatype='integer' name='Year' ordinal='5' />
+            <column datatype='string' name='YearMonth' ordinal='6' />
+          </columns>
+        </relation>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_US&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Date</remote-name>
+            <remote-type>133</remote-type>
+            <local-name>[Date]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>Date</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BallType</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[BallType]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>BallType</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>BallNumber</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[BallNumber]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>BallNumber</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Position</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Position]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>Position</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>PowerPlay</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[PowerPlay]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>PowerPlay</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Year]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>Year</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>YearMonth</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[YearMonth]</local-name>
+            <parent-name>[powerball_clean_long.csv]</parent-name>
+            <remote-alias>YearMonth</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RUS' />
+            <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='Ball Number' datatype='integer' name='[BallNumber]' role='dimension' type='ordinal' />
+      <column caption='Ball Type' datatype='string' name='[BallType]' role='dimension' type='nominal' />
+      <column caption='Ball Frequency' datatype='integer' name='[Calculation_2859222865070669829]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Power Play' datatype='integer' name='[PowerPlay]' role='measure' type='quantitative' />
+      <column caption='Year Month' datatype='string' name='[YearMonth]' role='dimension' type='nominal' />
+      <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
+      <column caption='powerball_clean_long.csv' datatype='table' name='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' role='measure' type='quantitative' />
+      <extract _.fcp.VConnDownstreamExtractsWithWarnings.true...user-specific='false' count='-1' enabled='true' object-id='' units='records'>
+        <connection access_mode='readonly' author-locale='en_US' class='hyper' dbname='/var/folders/0_/d8kqd2ld0712f7mk9mmv6mww0000gn/T/tableau-temp/#TableauTemp_01kw4sr10fyutw1gpa8jd0f3ka3z.hyper' default-settings='hyper' schema='Extract' sslmode='' tablename='Extract' update-time='09/09/2025 05:23:15 PM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Date</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Date]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Date</remote-alias>
+              <ordinal>0</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>2380</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>BallType</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[BallType]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>BallType</remote-alias>
+              <ordinal>1</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>BallNumber</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[BallNumber]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>BallNumber</remote-alias>
+              <ordinal>2</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>69</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Position</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Position]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Position</remote-alias>
+              <ordinal>3</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>PowerPlay</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[PowerPlay]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>PowerPlay</remote-alias>
+              <ordinal>4</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>6</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Year</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Year]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Year</remote-alias>
+              <ordinal>5</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>16</approx-count>
+              <contains-null>true</contains-null>
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>YearMonth</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[YearMonth]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>YearMonth</remote-alias>
+              <ordinal>6</ordinal>
+              <family>powerball_clean_long.csv</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>199</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='0' name='LEN_RUS' />
+              <object-id>[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]</object-id>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='powerball_clean_long.csv' id='powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15'>
+            <properties context=''>
+              <relation connection='textscan.1dlrtc90z22afa10ppx171duvzuj' name='powerball_clean_long.csv' table='[powerball_clean_long#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_US' separator=','>
+                  <column datatype='date' name='Date' ordinal='0' />
+                  <column datatype='string' name='BallType' ordinal='1' />
+                  <column datatype='integer' name='BallNumber' ordinal='2' />
+                  <column datatype='integer' name='Position' ordinal='3' />
+                  <column datatype='integer' name='PowerPlay' ordinal='4' />
+                  <column datatype='integer' name='Year' ordinal='5' />
+                  <column datatype='string' name='YearMonth' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+            <properties context='extract'>
+              <relation name='Extract' table='[Extract].[Extract]' type='table' />
+            </properties>
+          </object>
+        </objects>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <actions>
+    <action caption='Hover Highlight' name='[Action1_8103EA2202EE46228CE84FBAB132BE47]'>
+      <activation auto-clear='true' type='on-hover' />
+      <source dashboard='Powerball Number Trends Dashboard' type='sheet' />
+      <command command='tsc:brush'>
+        <param name='special-fields' value='all' />
+        <param name='target' value='Powerball Number Trends Dashboard' />
+      </command>
+    </action>
+  </actions>
+  <worksheets>
+    <worksheet name='Main Ball Frequency'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='powerball_clean_long' name='federated.0967z6a1hrk6n01g2vxht03qfu88' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0967z6a1hrk6n01g2vxht03qfu88'>
+            <column caption='Ball Number' datatype='integer' name='[BallNumber]' role='dimension' type='ordinal' />
+            <column caption='Ball Type' datatype='string' name='[BallType]' role='dimension' type='nominal' />
+            <column-instance column='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]' pivot='key' type='quantitative' />
+            <column caption='powerball_clean_long.csv' datatype='table' name='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' role='measure' type='quantitative' />
+            <column-instance column='[BallNumber]' derivation='None' name='[none:BallNumber:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[BallType]' derivation='None' name='[none:BallType:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]' direction='ASC' />
+          <filter class='categorical' column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallType:nk]'>
+            <groupfilter function='member' level='[none:BallType:nk]' member='&quot;Main&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallType:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0967z6a1hrk6n01g2vxht03qfu88].[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]' scope='rows' value='Number of Draws' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0967z6a1hrk6n01g2vxht03qfu88].[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]</rows>
+        <cols>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]</cols>
+      </table>
+      <simple-id uuid='{327451FC-8197-4F11-8B27-2FC0A5416E65}' />
+    </worksheet>
+    <worksheet name='Powerball Frequency'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='powerball_clean_long' name='federated.0967z6a1hrk6n01g2vxht03qfu88' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0967z6a1hrk6n01g2vxht03qfu88'>
+            <column caption='Ball Number' datatype='integer' name='[BallNumber]' role='dimension' type='ordinal' />
+            <column caption='Ball Type' datatype='string' name='[BallType]' role='dimension' type='nominal' />
+            <column-instance column='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]' pivot='key' type='quantitative' />
+            <column caption='powerball_clean_long.csv' datatype='table' name='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' role='measure' type='quantitative' />
+            <column-instance column='[BallNumber]' derivation='None' name='[none:BallNumber:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[BallType]' derivation='None' name='[none:BallType:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <natural-sort column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]' direction='ASC' />
+          <filter class='categorical' column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallType:nk]'>
+            <groupfilter function='member' level='[none:BallType:nk]' member='&quot;Powerball&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallType:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0967z6a1hrk6n01g2vxht03qfu88].[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]' scope='rows' value='Number of Draws' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-color' value='#e15759' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.0967z6a1hrk6n01g2vxht03qfu88].[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]</rows>
+        <cols>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]</cols>
+      </table>
+      <simple-id uuid='{E5054C9C-4980-4B42-94B1-06086288764A}' />
+    </worksheet>
+    <worksheet name='Sheet 4'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='powerball_clean_long' name='federated.0967z6a1hrk6n01g2vxht03qfu88' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0967z6a1hrk6n01g2vxht03qfu88'>
+            <column caption='Ball Number' datatype='integer' name='[BallNumber]' role='dimension' type='ordinal' />
+            <column caption='Ball Type' datatype='string' name='[BallType]' role='dimension' type='nominal' />
+            <column caption='Ball Frequency' datatype='integer' name='[Calculation_2859222865070669829]' role='measure' type='quantitative'>
+              <calculation class='tableau' formula='1' />
+            </column>
+            <column-instance column='[BallNumber]' derivation='None' name='[none:BallNumber:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[BallType]' derivation='None' name='[none:BallType:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Calculation_2859222865070669829]' derivation='Sum' name='[sum:Calculation_2859222865070669829:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]'>
+            <groupfilter count='1' end='top' function='end' units='records' user:ui-marker='end' user:ui-top-by-field='true'>
+              <groupfilter direction='DESC' expression='SUM([Calculation_2859222865070669829])' function='order' user:ui-marker='order'>
+                <groupfilter function='level-members' level='[none:BallNumber:ok]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+              </groupfilter>
+            </groupfilter>
+          </filter>
+          <filter class='categorical' column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallType:nk]'>
+            <groupfilter function='member' level='[none:BallType:nk]' member='&quot;Main&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.0967z6a1hrk6n01g2vxht03qfu88].[sum:Calculation_2859222865070669829:qk]' shelf='rows' />
+          </shelf-sorts>
+          <slices>
+            <column>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallType:nk]</column>
+            <column>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Text' />
+          </pane>
+        </panes>
+        <rows>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]</rows>
+        <cols>[federated.0967z6a1hrk6n01g2vxht03qfu88].[sum:Calculation_2859222865070669829:qk]</cols>
+      </table>
+      <simple-id uuid='{C52ECA56-5B22-4F73-AAAA-CDE380C725F4}' />
+    </worksheet>
+    <worksheet name='Trends Over Time'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run fontalignment='1'>&lt;Sheet Name&gt;</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='powerball_clean_long' name='federated.0967z6a1hrk6n01g2vxht03qfu88' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0967z6a1hrk6n01g2vxht03qfu88'>
+            <column caption='Ball Number' datatype='integer' name='[BallNumber]' role='dimension' type='ordinal' />
+            <column caption='Year Month' datatype='string' name='[YearMonth]' role='dimension' type='nominal' />
+            <column-instance column='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]' pivot='key' type='quantitative' />
+            <column caption='powerball_clean_long.csv' datatype='table' name='[__tableau_internal_object_id__].[powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15]' role='measure' type='quantitative' />
+            <column-instance column='[BallNumber]' derivation='None' name='[none:BallNumber:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[YearMonth]' derivation='None' name='[none:YearMonth:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]'>
+            <groupfilter function='member' level='[none:BallNumber:ok]' member='8' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='title' class='0' field='[federated.0967z6a1hrk6n01g2vxht03qfu88].[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]' scope='rows' value='Number of Draws' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+          </pane>
+        </panes>
+        <rows>[federated.0967z6a1hrk6n01g2vxht03qfu88].[__tableau_internal_object_id__].[cnt:powerball_clean_long.csv_477AF17D3F2841A38AD38BFB406B5F15:qk]</rows>
+        <cols>[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:YearMonth:nk]</cols>
+      </table>
+      <simple-id uuid='{BCF119E2-DF18-4A7A-93B5-A06A1FEA4516}' />
+    </worksheet>
+  </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Powerball Number Trends Dashboard'>
+      <layout-options>
+        <title>
+          <formatted-text>
+            <run bold='true' fontname='Tableau Bold' fontsize='24'>Powerball Number Frequencies (2010-2025)</run>
+            <run>Æ&#10;</run>
+            <run fontsize='8'>Æ </run>
+            <run>Æ&#10;</run>
+            <run fontcolor='#898989' fontsize='12'>Explore main and Powerball number draw counts, rankings, and trends over time.</run>
+          </formatted-text>
+        </title>
+      </layout-options>
+      <style>
+        <style-rule element='table'>
+          <format attr='background-color' value='#ffffff' />
+        </style-rule>
+        <style-rule element='dash-title'>
+          <format attr='background-color' value='#e6e6e6' />
+        </style-rule>
+      </style>
+      <size minheight='560' minwidth='420' sizing-mode='range' />
+      <datasources>
+        <datasource caption='powerball_clean_long' name='federated.0967z6a1hrk6n01g2vxht03qfu88' />
+      </datasources>
+      <datasource-dependencies datasource='federated.0967z6a1hrk6n01g2vxht03qfu88'>
+        <column caption='Ball Number' datatype='integer' name='[BallNumber]' role='dimension' type='ordinal' />
+        <column-instance column='[BallNumber]' derivation='None' name='[none:BallNumber:ok]' pivot='key' type='ordinal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='97838' id='21' param='vert' type-v2='layout-flow' w='96800' x='1600' y='1081'>
+            <zone h='21351' id='22' type-v2='title' w='96800' x='1600' y='1081'>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='4' />
+              </zone-style>
+            </zone>
+            <zone h='76487' id='14' param='vert' type-v2='layout-flow' w='96800' x='1600' y='22432'>
+              <zone h='76487' id='12' param='vert' type-v2='layout-flow' w='96800' x='1600' y='22432'>
+                <zone h='76487' id='9' param='horz' type-v2='layout-flow' w='96800' x='1600' y='22432'>
+                  <zone h='76487' id='7' type-v2='layout-basic' w='64800' x='1600' y='22432'>
+                    <zone h='38293' id='3' name='Main Ball Frequency' w='32381' x='1600' y='22432'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='38293' id='5' name='Powerball Frequency' w='32419' x='33981' y='22432'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                    <zone h='38194' id='6' name='Trends Over Time' w='64800' x='1600' y='60725'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                  <zone fixed-size='160' h='76487' id='8' is-fixed='true' param='vert' type-v2='layout-flow' w='32000' x='66400' y='22432'>
+                    <zone h='76487' id='10' name='Trends Over Time' param='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]' type-v2='filter' w='32000' x='66400' y='22432'>
+                      <zone-style>
+                        <format attr='border-color' value='#000000' />
+                        <format attr='border-style' value='none' />
+                        <format attr='border-width' value='0' />
+                        <format attr='margin' value='4' />
+                      </zone-style>
+                    </zone>
+                  </zone>
+                </zone>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <layout-options>
+            <title>
+              <formatted-text>
+                <run bold='true' fontname='Tableau Bold' fontsize='24'>Powerball Number Frequencies (2010-2025)</run>
+                <run>Æ&#10;</run>
+                <run fontsize='8'>Æ </run>
+                <run>Æ&#10;</run>
+                <run fontcolor='#898989' fontsize='12'>Explore main and Powerball number draw counts, rankings, and trends over time.</run>
+              </formatted-text>
+            </title>
+          </layout-options>
+          <size maxheight='850' minheight='850' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='19' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='97838' id='18' param='vert' type-v2='layout-flow' w='98698' x='651' y='1081'>
+                <zone fixed-size='232' h='42830' id='3' is-fixed='true' name='Main Ball Frequency' w='42825' x='651' y='13378'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='232' h='42830' id='5' is-fixed='true' name='Powerball Frequency' w='42854' x='43476' y='13378'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone h='85541' id='10' mode='checkdropdown' name='Trends Over Time' param='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]' type-v2='filter' w='13019' x='86330' y='13378'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+                <zone fixed-size='231' h='42711' id='6' is-fixed='true' name='Trends Over Time' w='85679' x='651' y='56208'>
+                  <zone-style>
+                    <format attr='border-color' value='#000000' />
+                    <format attr='border-style' value='none' />
+                    <format attr='border-width' value='0' />
+                    <format attr='margin' value='4' />
+                    <format attr='padding' value='0' />
+                  </zone-style>
+                </zone>
+              </zone>
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{CE0CC549-1D03-48D6-8309-410BE4222C0C}' />
+    </dashboard>
+  </dashboards>
+  <windows source-height='30'>
+    <window class='worksheet' name='Main Ball Frequency'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{B880CE15-91D6-44CC-A7E7-151BD3C99169}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 4'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{F64D6326-C230-4370-BD4A-4E38E1195F62}' />
+    </window>
+    <window class='worksheet' name='Powerball Frequency'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9495B51C-8148-4F30-BD06-CC1BF9F87681}' />
+    </window>
+    <window class='worksheet' name='Trends Over Time'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.0967z6a1hrk6n01g2vxht03qfu88].[none:BallNumber:ok]' type='filter' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{06861496-6EA1-4D3D-B1AA-A92EBDA8990F}' />
+    </window>
+    <window class='dashboard' name='Powerball Number Trends Dashboard'>
+      <viewpoints>
+        <viewpoint name='Main Ball Frequency'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Powerball Frequency'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Trends Over Time'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{6C7A9DFF-9537-441C-9DBA-73A8FCD02611}' />
+    </window>
+  </windows>
+</workbook>
