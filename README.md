@@ -1,5 +1,13 @@
 # Powerball Data Cleaning & Analysis
-This project processes raw Powerball data from the Texas Lottery site and turns them into clean, analysis-ready datasets. The Python script cleans up the raw CSVs, and the outputs are then used in Tableau to look at number frequencies and trends over time.
+This project processes raw Powerball data from the Texas Lottery site and produces clean, analysis-ready datasets. The cleaned data is then visualized in Tableau to explore number frequencies, most/least common numbers, and long-term trends, with context around the 2015 rule change that expanded the main ball pool.
+
+---
+
+## Tableau Dashboard
+[View Interactive Dashboard on Tableau Public](https://public.tableau.com/views/PowerballNumberTrendsDashboard/PowerballNumberTrendsDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+<img width="744" height="746" alt="image" src="https://github.com/user-attachments/assets/806d5f85-fdf6-41ce-a75d-b69c05d0e5e1" />
+
 
 ---
 
@@ -47,6 +55,22 @@ This will generate cleaned outputs for the full dataset under `data/processed/po
 
 ---
 
+## Key Insights
+- Most frequent main ball: 23
+- Least frequent main ball: 65
+- Most frequent Powerball: 24
+As of September 9, 2025
+
+---
+
+## Dashboard Features
+- **Main Number Frequencies**: bar chart of how often each main ball (1-69) has been drawn
+- **Powerball Frequencies**: bar chart of how often each Powerball (1-26) has been drawn
+- **Trends Over Time**: line chart showing draw frequency patterns by year
+- **KPI Cards**: highlight most frequent/least frequent numbers and total draws
+
+---
+
 ## Project Structure
 ```
 ├── data/
@@ -67,9 +91,12 @@ This will generate cleaned outputs for the full dataset under `data/processed/po
 ## Tableau
 After running `paver process`, connect Tableau to the `data/processed/` folder.
 
-Suggested views:
-- **Main Ball Frequency** -> bar chart of the most common white balls
-- **Powerball Frequency** -> bar chart of the most common Powerballs
-- **Trend** -> line chart of how often a selected ball appears across months/years
+---
 
-Combine these into a dashboard for an interactive overview.
+## Skills Demonstrated
+- Data cleaning & preprocessing (Python, Pandas)
+- Automated pipelines (Paver tasks)
+- Data reshaping (wide -> long format)
+- Visualization (Tableau Public dashboard)
+- Analytical storytelling (highlighting rule changes, frequency insights)
+  
