@@ -31,6 +31,22 @@ paver clean
 
 ---
 
+## Getting the Full Dataset
+
+For demo purposes, only a small `powerball_sample.csv` is included in this repo.
+
+If you want to work with the complete history:
+1. Go to the [Texas Lottery Powerball page](https://www.texaslottery.com/export/sites/lottery/Games/Powerball/Winning_Numbers/).
+2. Download the full CSV export of historical results.
+3. Save it to `data/raw/` (e.g., `data/raw/powerball_full.csv).
+4. Run the cleaner on it with:
+```
+paver process
+```
+This will generate cleaned outputs for the full dataset under `data/processed/powerball_full/`
+
+---
+
 ## Project Structure
 ```
 ├── data/
